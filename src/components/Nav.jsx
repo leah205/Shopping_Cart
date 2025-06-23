@@ -29,6 +29,7 @@ const StyledLink = styled.li`
     color: rgb(173, 173, 255);
 `
 
+
 const CartButton = styled.button`
     background: none;
     border: 0;
