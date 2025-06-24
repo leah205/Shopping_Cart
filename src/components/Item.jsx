@@ -29,12 +29,12 @@ const SelectAmountSection = styled.div`
 const ItemInput = styled.input`
     width: 100px;
 `
-export default function Item(){
+export default function Item({title, price, description, image, rating}){
     return <>
         <ItemCard>
-            <ItemImg src = "https://m.media-amazon.com/images/I/911n4nIhnpL._UY1000_.jpg"></ItemImg>
-            <h2>Shirt</h2>
-            <p>$500</p>
+            <ItemImg src = {image}></ItemImg>
+            <h2>{title}</h2>
+            <p>{price}</p>
             <SelectAmountSection>
                 <ItemNumberBtn $decrement>-</ItemNumberBtn>
                 <ItemInput type = "number"></ItemInput>

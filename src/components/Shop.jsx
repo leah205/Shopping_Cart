@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 const useStoreItems = () => {
     const [items, setItems ] = useState([]);
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
      useEffect(() => {
         fetch("https://fakestoreapi.com/products", {mode: "cors"})
         .then(response => {
@@ -28,12 +28,26 @@ const ItemContainer = styled.div`
 export default function Shop(){
    const {items, error, loading} = useStoreItems();
    console.log(items)
-
+   if (error){
+    return <h1>Server error</h1>
+   }
+   if (loading){
+    return <h1>Loading...</h1>
+   }
 
 
     return <>
     <h1>Shop</h1>
-    <ItemContainer><Item></Item></ItemContainer>
+    <ItemContainer>{
+    items.map((item) => {
+        return <Item 
+        description={item.description}
+        price = {item.price}
+        rating = {item.rating}
+        image = {item.image}
+        title = {item.title}
+    ></Item>
+    })}</ItemContainer>
     
     
     </>
