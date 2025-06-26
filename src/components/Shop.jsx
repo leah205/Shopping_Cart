@@ -1,32 +1,14 @@
 import styled from "styled-components"
 import Item from "./Item"
-import { useEffect, useState } from "react"
-
-const useStoreItems = () => {
-    const [items, setItems ] = useState([]);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-     useEffect(() => {
-        fetch("https://fakestoreapi.com/products", {mode: "cors"})
-        .then(response => {
-            if(response.status >= 400){
-                throw new Error("server error")
-            }
-            return response.json()})
-        .then(response => setItems(response))
-        .catch(error => setError(error))
-        .finally(() => setLoading(false))
-    }, [])
-    
-    return {items, error, loading}
-}
+import { useOutletContext } from "react-router-dom"
 
 
 const ItemContainer = styled.div`
     display: flex;
     flex-wrap: wrap;`
 export default function Shop(){
-   const {items, error, loading} = useStoreItems();
+   
+   const [items, error, loading] = useOutletContext();
    
    if (error){
     return <h1>Server error</h1>
@@ -35,7 +17,7 @@ export default function Shop(){
     return <h1>Loading...</h1>
    }
 
-
+   
     return <>
     <h1>Shop</h1>
     <ItemContainer>{
