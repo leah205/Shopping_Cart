@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import {useState} from "react"
 
 const ItemImg = styled.img`
    
@@ -7,7 +8,7 @@ const ItemImg = styled.img`
     width: 100px;
 `
 
-const ItemNumberBtn = styled.button`
+const StyledNumberBtn = styled.button`
     background: ${props => props.$decrement? "red" : "green"};
     border: 0;
     width: 30px;
@@ -29,16 +30,39 @@ const SelectAmountSection = styled.div`
 const ItemInput = styled.input`
     width: 100px;
 `
-export default function Item({title, price, description, image, rating}){
+
+function ItemNumberBtn({children, $decrement, updateCount}){
+    const handleClick = () => {
+         if($decrement){
+            updateCount('decrement')
+        } else {
+            updateCount('increment')
+        }
+    }
+    return <StyledNumberBtn onClick = {handleClick} $decrement = {$decrement} >{children}</StyledNumberBtn>
+   
+
+    
+}
+
+export default function Item({title, price, description, image, rating}){ 
+    const [countValue, setCountValue] = useState(0)
+    const handleCountClick = (type) => {
+        if(type == 'decrement'){
+            setCountValue(countValue - 1)
+        } else{
+            setCountValue(countValue + 1)
+        }
+    }
     return <>
         <ItemCard>
             <ItemImg src = {image}></ItemImg>
             <h2>{title}</h2>
             <p>{price}</p>
             <SelectAmountSection>
-                <ItemNumberBtn $decrement>-</ItemNumberBtn>
-                <ItemInput type = "number"></ItemInput>
-                <ItemNumberBtn $increment>+</ItemNumberBtn>
+                <ItemNumberBtn $decrement = {true} count = {countValue} updateCount = {handleCountClick}>-</ItemNumberBtn>
+                <ItemInput type = "number" value = {countValue}></ItemInput>
+                <ItemNumberBtn $increment = {true} count = {countValue} updateCount = {handleCountClick}>+</ItemNumberBtn>
                 
             </SelectAmountSection>
             
