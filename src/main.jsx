@@ -5,11 +5,14 @@ import './index.css'
 import App from './App.jsx'
 import Shop from './components/Shop.jsx'
 import Home from './components/Home.jsx'
+import ErrorPage from './components/ErrorPage.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <ErrorPage />,
+    
     children: [
       {index: true,
         element: <Home />
