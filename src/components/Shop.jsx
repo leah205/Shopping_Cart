@@ -16,8 +16,8 @@ const useStoreItems = () => {
         .then(response => setItems(response))
         .catch(error => setError(error))
         .finally(() => setLoading(false))
-        
     }, [])
+    
     return {items, error, loading}
 }
 
@@ -27,7 +27,7 @@ const ItemContainer = styled.div`
     flex-wrap: wrap;`
 export default function Shop(){
    const {items, error, loading} = useStoreItems();
-   console.log(items)
+   
    if (error){
     return <h1>Server error</h1>
    }
@@ -46,6 +46,7 @@ export default function Shop(){
         rating = {item.rating}
         image = {item.image}
         title = {item.title}
+        key = {item.id}
     ></Item>
     })}</ItemContainer>
     

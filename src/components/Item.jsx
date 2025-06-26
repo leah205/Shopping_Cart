@@ -49,6 +49,9 @@ export default function Item({title, price, description, image, rating}){
     const [countValue, setCountValue] = useState(0)
     const handleCountClick = (type) => {
         if(type == 'decrement'){
+            if (countValue == 0){
+                return
+            }
             setCountValue(countValue - 1)
         } else{
             setCountValue(countValue + 1)
