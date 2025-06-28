@@ -40,10 +40,8 @@ function ItemNumberBtn({children, $decrement, updateCount}){
         }
     }
     return <StyledNumberBtn onClick = {handleClick} $decrement = {$decrement} >{children}</StyledNumberBtn>
-   
-
-    
 }
+
 
 export default function Item({title, price, description, image, rating}){ 
     const [countValue, setCountValue] = useState(0)
@@ -64,7 +62,9 @@ export default function Item({title, price, description, image, rating}){
             <p>{price}</p>
             <SelectAmountSection>
                 <ItemNumberBtn $decrement = {true} count = {countValue} updateCount = {handleCountClick}>-</ItemNumberBtn>
-                <ItemInput type = "number" value = {countValue}></ItemInput>
+                <ItemInput type = "number" 
+                value = {countValue} 
+                onChange = {(event) => setCountValue(event.target.value)}></ItemInput>
                 <ItemNumberBtn $increment = {true} count = {countValue} updateCount = {handleCountClick}>+</ItemNumberBtn>
                 
             </SelectAmountSection>
