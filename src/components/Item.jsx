@@ -55,11 +55,14 @@ export default function Item({title, price, description, image, rating}){
             setCountValue(countValue + 1)
         }
     }
+    
     return <>
         <ItemCard>
             <ItemImg src = {image}></ItemImg>
             <h2>{title}</h2>
             <p>{price}</p>
+            <p>{description}</p>
+           <p>{rating.rate} by {rating.count}</p>
             <SelectAmountSection>
                 <ItemNumberBtn $decrement = {true} count = {countValue} updateCount = {handleCountClick}>-</ItemNumberBtn>
                 <ItemInput type = "number" 

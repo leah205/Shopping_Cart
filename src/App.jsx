@@ -5,21 +5,15 @@ import React from "react"
 import Nav from './components/Nav'
 import {createGlobalStyle} from 'styled-components'
 import {useEffect, useState} from "react"
+import "./App.css"
+
 
 //new font
 //description and rating
 
-//onchange
 
 
 const GlobalStyles = createGlobalStyle`
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    color: inherit;
-}
 
 #root{
 
