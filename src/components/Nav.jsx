@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import cartSrc from "../assets/cart.svg"
 
 const StyledNav = styled.nav`
     display: flex;
@@ -8,6 +9,8 @@ const StyledNav = styled.nav`
     text-decoration: none;
     width: 100vw;
     background: navy;
+    align-items: center;
+    padding: 0px 15px;
 `
 
 const NavList = styled.ul`
@@ -15,8 +18,10 @@ const NavList = styled.ul`
     display: flex;
     justify-content:space-between;
     width:100%;
+    align-items: center;
     div{
-    display:flex
+    display:flex;
+    align-items: center;
     }
     
 `
@@ -25,7 +30,7 @@ const StyledLink = styled.li`
     background: white;
 }
     height: 100%;
-    padding: 20px;
+    padding: 5px;
     color: rgb(173, 173, 255);
 `
 
@@ -33,7 +38,12 @@ const StyledLink = styled.li`
 const CartButton = styled.button`
     background: none;
     border: 0;
+
+    img{
+    height: 40px}
 `
+
+
 
 
 export default function Nav(){
@@ -44,7 +54,7 @@ export default function Nav(){
                 <StyledLink><Link to = "home">Home</Link></StyledLink>
                 <StyledLink><Link to = "shop">Shop </Link></StyledLink>
                 </div>
-                <StyledLink><CartButton>Cart</CartButton></StyledLink>
+                <StyledLink><CartButton><img src= {cartSrc} alt="cart" /></CartButton></StyledLink>
 
             </NavList>
             

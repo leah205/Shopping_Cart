@@ -7,10 +7,7 @@ import {createGlobalStyle} from 'styled-components'
 import {useEffect, useState} from "react"
 import "./App.css"
 
-
-//new font
-//description and rating
-
+//update shopping cart when add to cart is clicked
 
 
 const GlobalStyles = createGlobalStyle`
