@@ -35,7 +35,7 @@ const StyledLink = styled.li`
 `
 
 
-const CartButton = styled.button`
+const StyledCartButton = styled.button`
     background: none;
     border: 0;
 
@@ -43,10 +43,19 @@ const CartButton = styled.button`
     height: 40px}
 `
 
+function CartButton({ItemCount}){
+    return <StyledCartButton>
+        <p>{ItemCount}</p>
+        <img src= {cartSrc} alt="cart" />
+    </StyledCartButton>
+}
 
 
 
-export default function Nav(){
+
+export default function Nav({cartItems}){
+    
+    let itemCount = Object.values(cartItems).reduce((acc, curr) => curr + acc, 0)
     return (
         <StyledNav>
             <NavList>
@@ -54,7 +63,7 @@ export default function Nav(){
                 <StyledLink><Link to = "home">Home</Link></StyledLink>
                 <StyledLink><Link to = "shop">Shop </Link></StyledLink>
                 </div>
-                <StyledLink><CartButton><img src= {cartSrc} alt="cart" /></CartButton></StyledLink>
+                <StyledLink><CartButton ItemCount = {itemCount}></CartButton></StyledLink>
 
             </NavList>
             

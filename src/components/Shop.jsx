@@ -8,7 +8,7 @@ const ItemContainer = styled.div`
     flex-wrap: wrap;`
 export default function Shop(){
    
-   const [items, error, loading] = useOutletContext();
+   const [items, error, loading, addItemsToCart] = useOutletContext();
    
    if (error){
     return <h1>Server error</h1>
@@ -29,6 +29,7 @@ export default function Shop(){
         image = {item.image}
         title = {item.title}
         key = {item.id}
+        addItemsToCart = {addItemsToCart}
     ></Item>
     })}</ItemContainer>
     

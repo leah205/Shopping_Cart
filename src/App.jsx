@@ -41,13 +41,24 @@ const useStoreItems = () => {
 
 function App() {
   const {items, error, loading} = useStoreItems()
+  const [cartItems, setCartItems] = useState({})
   
+  function addItemsToCart(item, count){
+
+    let newCartItems = {...cartItems}
+    if (item in newCartItems){
+        newCartItems[item] += count
+    } else {
+        newCartItems[item] = count
+    }
+    setCartItems(newCartItems)
+  }
 
   return (
     <>
     <GlobalStyles />
-     <Nav />
-      <Outlet context = {[items, error, loading]}/>
+     <Nav cartItems = {cartItems}/>
+      <Outlet context = {[items, error, loading, addItemsToCart]}/>
    
     
      </>

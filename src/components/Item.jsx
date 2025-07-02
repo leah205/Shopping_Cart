@@ -43,7 +43,7 @@ function ItemNumberBtn({children, $decrement, updateCount}){
 }
 
 
-export default function Item({title, price, description, image, rating}){ 
+export default function Item({title, price, description, image, rating, addItemsToCart}){ 
     const [countValue, setCountValue] = useState(0)
     const handleCountClick = (type) => {
         if(type == 'decrement'){
@@ -54,6 +54,11 @@ export default function Item({title, price, description, image, rating}){
         } else{
             setCountValue(countValue + 1)
         }
+    }
+
+    function clickAddToCart(){
+        addItemsToCart(title, countValue)
+        setCountValue(0)
     }
     
     return <>
@@ -73,7 +78,7 @@ export default function Item({title, price, description, image, rating}){
             </SelectAmountSection>
             
             
-            <button>Add to Cart</button>
+            <button onClick = {clickAddToCart}>Add to Cart</button>
         </ItemCard>
     </>
 }
