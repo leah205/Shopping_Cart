@@ -43,6 +43,7 @@ const useStoreItems = () => {
 function App() {
   const {items, error, loading} = useStoreItems()
   const [cartItems, setCartItems] = useState({})
+  const [shoppingModal, setShoppingModal] = useState(false)
   
   function addItemsToCart(item, count){
 
@@ -59,8 +60,8 @@ function App() {
   return (
     <>
     <GlobalStyles />
-     <Nav cartItems = {cartItems}/>
-     <Cart items = {cartItems}></Cart>
+     <Nav cartItems = {cartItems} setShoppingModal = {setShoppingModal}/>
+     {shoppingModal && <Cart items = {cartItems} ></Cart>}
       <Outlet context = {[items, error, loading, addItemsToCart]}/>
    
     

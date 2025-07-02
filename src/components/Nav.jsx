@@ -43,8 +43,9 @@ const StyledCartButton = styled.button`
     height: 40px}
 `
 
-function CartButton({ItemCount}){
-    return <StyledCartButton>
+function CartButton({ItemCount, handleClick}){
+       
+    return <StyledCartButton onClick = {() => handleClick(true)}>
         <p>{ItemCount}</p>
         <img src= {cartSrc} alt="cart" />
     </StyledCartButton>
@@ -53,9 +54,10 @@ function CartButton({ItemCount}){
 
 
 
-export default function Nav({cartItems}){
+export default function Nav({cartItems,  setShoppingModal}){
     
     let itemCount = Object.values(cartItems).reduce((acc, curr) => curr + acc, 0)
+ 
     return (
         <StyledNav>
             <NavList>
@@ -63,7 +65,10 @@ export default function Nav({cartItems}){
                 <StyledLink><Link to = "home">Home</Link></StyledLink>
                 <StyledLink><Link to = "shop">Shop </Link></StyledLink>
                 </div>
-                <StyledLink><CartButton ItemCount = {itemCount}></CartButton></StyledLink>
+                <StyledLink><CartButton 
+                ItemCount = {itemCount}
+                handleClick = {setShoppingModal}
+                ></CartButton></StyledLink>
 
             </NavList>
             
