@@ -6,6 +6,7 @@ import Nav from './components/Nav'
 import {createGlobalStyle} from 'styled-components'
 import {useEffect, useState} from "react"
 import "./App.css"
+import Cart from './components/Cart'
 
 //update shopping cart when add to cart is clicked
 
@@ -52,12 +53,14 @@ function App() {
         newCartItems[item] = count
     }
     setCartItems(newCartItems)
+    console.log(cartItems)
   }
 
   return (
     <>
     <GlobalStyles />
      <Nav cartItems = {cartItems}/>
+     <Cart items = {cartItems}></Cart>
       <Outlet context = {[items, error, loading, addItemsToCart]}/>
    
     
