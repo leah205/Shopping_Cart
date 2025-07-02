@@ -61,7 +61,7 @@ function App() {
     <>
     <GlobalStyles />
      <Nav cartItems = {cartItems} setShoppingModal = {setShoppingModal}/>
-     {shoppingModal && <Cart items = {cartItems} ></Cart>}
+     {shoppingModal && <Cart items = {cartItems} setModal = {setShoppingModal} ></Cart>}
       <Outlet context = {[items, error, loading, addItemsToCart]}/>
    
     

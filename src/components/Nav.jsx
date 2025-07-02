@@ -44,7 +44,6 @@ const StyledCartButton = styled.button`
 `
 
 function CartButton({ItemCount, handleClick}){
-       
     return <StyledCartButton onClick = {() => handleClick(true)}>
         <p>{ItemCount}</p>
         <img src= {cartSrc} alt="cart" />
