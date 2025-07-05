@@ -45,9 +45,15 @@ function App() {
   const {items, error, loading} = useStoreItems()
   const [cartItems, setCartItems] = useState([])
   const [shoppingModal, setShoppingModal] = useState(false)
-  let itemCount =  cartItems.reduce((acc, cur) => {
+  function getItemCount(){
+    return cartItems.reduce((acc, cur) => {
         return acc + cur.count
-    }, 0)
+    }, 0);
+  }
+
+  let itemCount =  (cartItems.length)? getItemCount(): 0;
+  
+ console.log(itemCount)
   
   function addItemsToCart(details){
     let newCartItems = [...cartItems]
@@ -67,7 +73,7 @@ function App() {
   return (
     <>
     <GlobalStyles />
-     <Nav ItemCount = {itemCount} setShoppingModal = {setShoppingModal}/>
+     <Nav itemCount = {itemCount} setShoppingModal = {setShoppingModal}/>
      {shoppingModal && <Cart items = {cartItems} setModal = {setShoppingModal} ></Cart>}
       <Outlet context = {[items, error, loading, addItemsToCart]}/>
    

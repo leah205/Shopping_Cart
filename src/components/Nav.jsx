@@ -35,7 +35,7 @@ const StyledLink = styled.li`
 `
 
 
-const StyledCartButton = styled.button`
+const StyledCartButton = styled.div`
     background: none;
     border: 0;
 
@@ -44,6 +44,7 @@ const StyledCartButton = styled.button`
 `
 
 function CartButton({ItemCount, handleClick}){
+   console.log(ItemCount)
     return <StyledCartButton onClick = {() => handleClick(true)}>
         <p>{ItemCount}</p>
         <img src= {cartSrc} alt="cart" />
@@ -54,6 +55,7 @@ function CartButton({ItemCount, handleClick}){
 
 
 export default function Nav({itemCount,  setShoppingModal}){
+    console.log(itemCount)
     return (
         <StyledNav>
             <NavList>
@@ -69,7 +71,5 @@ export default function Nav({itemCount,  setShoppingModal}){
             </NavList>
             
         </StyledNav> )
-    
-    
 }
 
