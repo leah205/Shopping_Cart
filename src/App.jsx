@@ -8,6 +8,7 @@ import {useEffect, useState} from "react"
 import "./App.css"
 import Cart from './components/Cart'
 
+
 //update shopping cart when add to cart is clicked
 
 
@@ -42,25 +43,31 @@ const useStoreItems = () => {
 
 function App() {
   const {items, error, loading} = useStoreItems()
-  const [cartItems, setCartItems] = useState({})
+  const [cartItems, setCartItems] = useState([])
   const [shoppingModal, setShoppingModal] = useState(false)
+  let itemCount =  cartItems.reduce((acc, cur) => {
+        return acc + cur.count
+    }, 0)
   
-  function addItemsToCart(item, count){
-
-    let newCartItems = {...cartItems}
-    if (item in newCartItems){
-        newCartItems[item] += count
-    } else {
-        newCartItems[item] = count
+  function addItemsToCart(details){
+    let newCartItems = [...cartItems]
+    //check for id
+    let item = newCartItems.find((item) => item.id == details.id)
+   
+    if(item){
+        item.count += details.count
+    }else {
+      
+        newCartItems.push(details)
     }
+   
     setCartItems(newCartItems)
-    console.log(cartItems)
-  }
+     }
 
   return (
     <>
     <GlobalStyles />
-     <Nav cartItems = {cartItems} setShoppingModal = {setShoppingModal}/>
+     <Nav ItemCount = {itemCount} setShoppingModal = {setShoppingModal}/>
      {shoppingModal && <Cart items = {cartItems} setModal = {setShoppingModal} ></Cart>}
       <Outlet context = {[items, error, loading, addItemsToCart]}/>
    

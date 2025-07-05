@@ -53,10 +53,7 @@ function CartButton({ItemCount, handleClick}){
 
 
 
-export default function Nav({cartItems,  setShoppingModal}){
-    
-    let itemCount = Object.values(cartItems).reduce((acc, curr) => curr + acc, 0)
- 
+export default function Nav({itemCount,  setShoppingModal}){
     return (
         <StyledNav>
             <NavList>

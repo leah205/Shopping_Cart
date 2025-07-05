@@ -29,6 +29,7 @@ export default function Shop(){
         image = {item.image}
         title = {item.title}
         key = {item.id}
+        id = {item.id}
         addItemsToCart = {addItemsToCart}
     ></Item>
     })}</ItemContainer>

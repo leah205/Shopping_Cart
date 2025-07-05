@@ -43,7 +43,7 @@ function ItemNumberBtn({children, $decrement, updateCount}){
 }
 
 
-export default function Item({title, price, description, image, rating, addItemsToCart}){ 
+export default function Item({id, title, price, description, image, rating, addItemsToCart}){ 
     const [countValue, setCountValue] = useState(0)
     const handleCountClick = (type) => {
         if(type == 'decrement'){
@@ -57,7 +57,8 @@ export default function Item({title, price, description, image, rating, addItems
     }
 
     function clickAddToCart(){
-        addItemsToCart(title, countValue)
+        let details = {title: title, count: countValue, image:image, price: price, id: id}
+        addItemsToCart(details)
         setCountValue(0)
     }
     

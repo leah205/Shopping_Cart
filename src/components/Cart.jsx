@@ -24,16 +24,26 @@ const StyledCloseModalBtn = styled.button`
     height: 30px;
     width: 30px;
     margin-left: auto;
+`
 
+const ProductImage = styled.img`
+    max-height: 100px
 `
 
 
 export default function Cart({items, setModal}){
+    console.log(items)
     return <StyledCartModal>
         <StyledCloseModalBtn onClick = {() => setModal(false)}>x</StyledCloseModalBtn>
         {
-        Object.entries(items).map(([item, count]) => {
-            return (<p>{item}: {count}</p>)
+        items.map((item) => {
+            return (<div key = {item.id}>
+            <p >{item.title}: {item.count}</p>
+            <p>{item.price}</p>
+            <ProductImage src={item.image} alt="" />
+            </div>
+        
+        )
         })
         }</StyledCartModal>
 }
