@@ -57,6 +57,11 @@ function App() {
     let newCartItems = cartItems.filter((item) => item.id != id)
     setCartItems(newCartItems)
   }
+
+  function checkoutCart(){
+    setCartItems([]);
+    setShoppingModal(false)
+  }
   
   function addItemsToCart(details){
     let newCartItems = [...cartItems]
@@ -80,7 +85,8 @@ function App() {
      {shoppingModal && <Cart 
      items = {cartItems} 
      setModal = {setShoppingModal} 
-     deleteItem = {deleteItemsFromCart} ></Cart>}
+     deleteItem = {deleteItemsFromCart}
+     checkout = {checkoutCart} ></Cart>}
       <Outlet context = {[items, error, loading, addItemsToCart]}/>
    
     

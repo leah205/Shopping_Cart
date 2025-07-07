@@ -44,9 +44,17 @@ const TopItemContainer = styled.div`
     justify-content: space-between;
 `
 
+const CheckoutButton = styled.button`
+    border:0;
+    background: blue;
+    color: white;
+    width: 200px;
+    height: 50px;
+`
 
 
-export default function Cart({items, setModal, deleteItem}){
+
+export default function Cart({items, setModal, deleteItem, checkout}){
     console.log(items)
     return <StyledCartModal>
         <StyledCloseModalBtn onClick = {() => setModal(false)}>x</StyledCloseModalBtn>
@@ -63,5 +71,7 @@ export default function Cart({items, setModal, deleteItem}){
         
         )
         })
-        }</StyledCartModal>
+        }
+        <CheckoutButton onClick = {checkout}>Checkout</CheckoutButton>
+        </StyledCartModal>
 }
