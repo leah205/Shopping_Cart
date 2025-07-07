@@ -24,21 +24,39 @@ const StyledCloseModalBtn = styled.button`
     height: 30px;
     width: 30px;
     margin-left: auto;
+    margin-bottom: 10px;
 `
 
 const ProductImage = styled.img`
     max-height: 100px
 `
+const DeleteButton = styled.button`
+    height: 30px;
+    width: 30px;
+    background: red;
+    color: white;
+    border:0;
+    border-radius: 50%;
+    font-size: 1.2em;
+`
+const TopItemContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+`
 
 
-export default function Cart({items, setModal}){
+
+export default function Cart({items, setModal, deleteItem}){
     console.log(items)
     return <StyledCartModal>
         <StyledCloseModalBtn onClick = {() => setModal(false)}>x</StyledCloseModalBtn>
         {
         items.map((item) => {
             return (<div key = {item.id}>
+            <TopItemContainer>
             <p >{item.title}: {item.count}</p>
+            <DeleteButton onClick = {() => deleteItem(item.id)}>-</DeleteButton>
+            </TopItemContainer>
             <p>{item.price}</p>
             <ProductImage src={item.image} alt="" />
             </div>

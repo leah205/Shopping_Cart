@@ -53,7 +53,10 @@ function App() {
 
   let itemCount =  (cartItems.length)? getItemCount(): 0;
   
- console.log(itemCount)
+  function deleteItemsFromCart(id){
+    let newCartItems = cartItems.filter((item) => item.id != id)
+    setCartItems(newCartItems)
+  }
   
   function addItemsToCart(details){
     let newCartItems = [...cartItems]
@@ -74,7 +77,10 @@ function App() {
     <>
     <GlobalStyles />
      <Nav itemCount = {itemCount} setShoppingModal = {setShoppingModal}/>
-     {shoppingModal && <Cart items = {cartItems} setModal = {setShoppingModal} ></Cart>}
+     {shoppingModal && <Cart 
+     items = {cartItems} 
+     setModal = {setShoppingModal} 
+     deleteItem = {deleteItemsFromCart} ></Cart>}
       <Outlet context = {[items, error, loading, addItemsToCart]}/>
    
     
