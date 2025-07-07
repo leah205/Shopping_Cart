@@ -12,6 +12,8 @@ import Cart from './components/Cart'
 
 //add total cost
 //cart empty message and no checkout
+//extend modal with more items
+//does not add to cart if 0 items
 
 
 const GlobalStyles = createGlobalStyle`

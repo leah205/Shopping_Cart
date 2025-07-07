@@ -4,11 +4,11 @@ const StyledCartModal = styled.div`
 position: absolute;
 z-index: 100;
   left: 50%;
-  top: 50%;
+  top: calc(50% + 50px);
   transform: translate(-50%, -50%);
   background: white;
   border-radius: 15px;
-  height: 500px;
+  min-height: 100px;
   width: 500px;
   border: 1px solid gray;
   box-shadow: 3px 5px 5px gray;
@@ -18,7 +18,7 @@ z-index: 100;
 `
 const StyledCloseModalBtn = styled.button`
     border:0;
-    background: red;
+    background: rgb(169, 30, 30);;
     border-radius: 50%;
     color: white;
     text-align: center;
@@ -32,25 +32,37 @@ const ProductImage = styled.img`
     max-height: 100px
 `
 const DeleteButton = styled.button`
-    height: 30px;
-    width: 30px;
-    background: red;
+    padding: 5px 10px;
+    background: rgb(169, 30, 30);
     color: white;
     border:0;
-    border-radius: 50%;
-    font-size: 1.2em;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 1.1em;
 `
-const TopItemContainer = styled.div`
+const ItemContainer = styled.div`
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
 `
-
+const LeftItemContainer = styled.div`
+display: flex;
+align-items: center;
+gap: 10px;`
+const DetailsContainer = styled.div`
+    height: fit-content;
+`
 const CheckoutButton = styled.button`
     border:0;
-    background: blue;
+    background: navy;
+    border-radius: 3px;
     color: white;
     width: 200px;
     height: 50px;
+    margin: 15px auto;
+    
 `
 
 
@@ -61,14 +73,18 @@ export default function Cart({items, setModal, deleteItem, checkout}){
         <StyledCloseModalBtn onClick = {() => setModal(false)}>x</StyledCloseModalBtn>
         {
         items.map((item) => {
-            return (<div key = {item.id}>
-            <TopItemContainer>
-            <p >{item.title}: {item.count}</p>
-            <DeleteButton onClick = {() => deleteItem(item.id)}>-</DeleteButton>
-            </TopItemContainer>
-            <p>{item.price}</p>
-            <ProductImage src={item.image} alt="" />
-            </div>
+            return (<ItemContainer key = {item.id}>
+                <LeftItemContainer>
+             <ProductImage src={item.image} alt="" />
+            <DetailsContainer>
+            <p >{item.title}</p>
+            <p>Quantity: {item.count}</p>
+            <p>${item.price}</p>
+            </DetailsContainer>
+            </LeftItemContainer>
+            <DeleteButton onClick = {() => deleteItem(item.id)}>delete</DeleteButton>
+         
+            </ItemContainer>
         
         )
         })
