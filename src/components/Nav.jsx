@@ -22,12 +22,13 @@ const NavList = styled.ul`
     div{
     display:flex;
     align-items: center;
+
     }
     
 `
 const StyledLink = styled.li`
     &:hover{
-    background: white;
+    background: rgb(149, 149, 178);;
 }
     height: 100%;
     padding: 5px;

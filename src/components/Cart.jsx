@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 const StyledCartModal = styled.div`
 position: absolute;
+z-index: 100;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -72,6 +73,9 @@ export default function Cart({items, setModal, deleteItem, checkout}){
         )
         })
         }
-        <CheckoutButton onClick = {checkout}>Checkout</CheckoutButton>
+        {items.length? <CheckoutButton onClick = {checkout}>Checkout</CheckoutButton> : 
+        <h3>No Items In Cart</h3>
+
+        }
         </StyledCartModal>
 }

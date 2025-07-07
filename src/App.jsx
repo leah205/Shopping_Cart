@@ -9,8 +9,9 @@ import "./App.css"
 import Cart from './components/Cart'
 
 
-//up z-index of modal
+
 //add total cost
+//cart empty message and no checkout
 
 
 const GlobalStyles = createGlobalStyle`
@@ -35,7 +36,7 @@ const useStoreItems = () => {
         .catch(error => setError(error))
         .finally(() => setLoading(false))
     }, [])
-    console.log(items)
+  
     return {items, error, loading}
 }
 
