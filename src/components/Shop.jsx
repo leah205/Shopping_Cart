@@ -5,7 +5,12 @@ import { useOutletContext } from "react-router-dom"
 
 const ItemContainer = styled.div`
     display: flex;
-    flex-wrap: wrap;`
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 20px;
+    align-content: center;
+   `
 export default function Shop(){
    
    const [items, error, loading, addItemsToCart] = useOutletContext();
@@ -19,7 +24,7 @@ export default function Shop(){
 
    
     return <>
-    <h1>Shop</h1>
+   
     <ItemContainer>{
     items.map((item) => {
         return <Item 
