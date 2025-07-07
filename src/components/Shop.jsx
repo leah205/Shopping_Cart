@@ -28,9 +28,8 @@ export default function Shop(){
     <ItemContainer>{
     items.map((item) => {
         return <Item 
-        description={item.description}
         price = {item.price}
-        rating = {item.rating}
+      
         image = {item.image}
         title = {item.title}
         key = {item.id}

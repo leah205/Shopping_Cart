@@ -9,13 +9,13 @@ import "./App.css"
 import Cart from './components/Cart'
 
 
-//update shopping cart when add to cart is clicked
+//up z-index of modal
+//add total cost
 
 
 const GlobalStyles = createGlobalStyle`
 
 #root{
-
 height: 100vh
 }
 `;
