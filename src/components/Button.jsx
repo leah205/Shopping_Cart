@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-    background: blue;
+    background: navy;
     color: white;
     padding: 10px 20px;
     font-size: 1.2rem;
@@ -9,5 +9,7 @@ const Button = styled.button`
     width: fit-content;
     margin: auto;
     display: block;
+     &:hover{
+    background: rgb(3, 0, 82)}
 `
 export default Button

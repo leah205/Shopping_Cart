@@ -68,6 +68,8 @@ const CheckoutButton = styled.button`
     width: 200px;
     height: 50px;
     margin: 15px auto;
+     &:hover{
+    background: rgb(3, 0, 82)}
 `
 const StyledTotalCost = styled.p`
     color: green;
