@@ -17,6 +17,10 @@ z-index: 100;
   padding: 20px;
     display: flex;
     flex-direction: column;
+     @media (max-width: 600px){
+    width: 90vw;
+    font-size: 0.8rem;
+    }
 `
 const StyledCloseModalBtn = styled.button`
     border:0;

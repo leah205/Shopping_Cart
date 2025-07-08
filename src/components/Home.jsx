@@ -32,6 +32,9 @@ let Description = styled.div`
     justify-content: center;
     margin: 20px auto;
     border-radius: 10px;
+    @media (max-width: 600px){
+    width: 90vw;
+    }
 `
 let DescriptionText = styled.div`
     height: fit-content;
@@ -43,6 +46,9 @@ let DescriptionText = styled.div`
     margin: auto;
     padding: 20px;
     border-radius: 10px;
+    @media (max-width: 600px){
+    font-size: 0.8rem;
+    }
 `
 
 export default function Home(){
