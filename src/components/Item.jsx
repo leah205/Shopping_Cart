@@ -86,7 +86,9 @@ export default function Item({id, title, price,  image,  addItemsToCart}){
     }
 
     function clickAddToCart(){
+        if(countValue == 0) return;
         let details = {title: title, count: countValue, image:image, price: price, id: id}
+        
         addItemsToCart(details)
         setCountValue(0)
     }
