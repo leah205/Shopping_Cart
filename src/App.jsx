@@ -22,6 +22,7 @@ height: 100vh
 `;
 
 const useStoreItems = () => {
+  
     const [items, setItems ] = useState([]);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);

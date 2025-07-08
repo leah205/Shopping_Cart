@@ -2,6 +2,7 @@ import styled from "styled-components"
 import storeSrc from "../assets/store.jpg"
 import Button from "./Button"
 import {Link} from "react-router-dom"
+import React from "react"
 
 /*let StoreImg = styled.img`
     width: 60vw;

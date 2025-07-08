@@ -1,5 +1,8 @@
 import styled from "styled-components"
+import React from "react"
+import PropTypes from "prop-types"
 import {useState} from "react"
+
 
 const ItemImg = styled.img`
    
@@ -114,4 +117,18 @@ export default function Item({id, title, price,  image,  addItemsToCart}){
             </div>
         </ItemCard>
     </>
+}
+
+Item.propTypes = {
+    id: PropTypes.number,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    image: PropTypes.string,
+    addItemsToCart: PropTypes.func
+}
+
+ItemNumberBtn.propTypes = {
+    children: PropTypes.node,
+    $decrement: PropTypes.bool,
+    updateCount: PropTypes.func,
 }

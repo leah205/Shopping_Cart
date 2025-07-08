@@ -1,4 +1,6 @@
 import styled from "styled-components"
+import {React} from "react"
+import PropTypes from "prop-types"
 
 const StyledCartModal = styled.div`
 position: absolute;
@@ -71,7 +73,7 @@ const StyledTotalCost = styled.p`
 
 
 export default function Cart({items, setModal, deleteItem, checkout, totalCost}){
-    console.log(items)
+   
     return <StyledCartModal>
         <StyledCloseModalBtn onClick = {() => setModal(false)}>x</StyledCloseModalBtn>
         {
@@ -98,4 +100,12 @@ export default function Cart({items, setModal, deleteItem, checkout, totalCost})
 
         }
         </StyledCartModal>
+}
+
+Cart.propTypes = {
+    items: PropTypes.array,
+    setModal: PropTypes.bool,
+    deleteItem: PropTypes.func,
+    checkout: PropTypes.func,
+    totalCost: PropTypes.number
 }

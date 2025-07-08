@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import cartSrc from "../assets/cart.svg"
+import PropTypes from "prop-types";
 
 const StyledNav = styled.nav`
     display: flex;
@@ -52,6 +53,10 @@ function CartButton({ItemCount, handleClick}){
     </StyledCartButton>
 }
 
+CartButton.propTypes = {
+    ItemCount: PropTypes.number,
+    handleClick: PropTypes.func
+}
 
 
 
@@ -72,5 +77,10 @@ export default function Nav({itemCount,  setShoppingModal}){
             </NavList>
             
         </StyledNav> )
+}
+
+Nav.propTypes = {
+    itemCount: PropTypes.number,
+    setShoppingModal: PropTypes.func
 }
 
