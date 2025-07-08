@@ -52,8 +52,14 @@ function App() {
     }, 0);
   }
 
+  function getItemCost(){
+    return cartItems.reduce((acc, cur) => {
+      return acc + cur.count * cur.price
+    }, 0)
+  }
+
   let itemCount =  (cartItems.length)? getItemCount(): 0;
-  
+  let itemCost = (cartItems.length)? getItemCost(): 0;
   function deleteItemsFromCart(id){
     let newCartItems = cartItems.filter((item) => item.id != id)
     setCartItems(newCartItems)
@@ -88,7 +94,8 @@ function App() {
      items = {cartItems} 
      setModal = {setShoppingModal} 
      deleteItem = {deleteItemsFromCart}
-     checkout = {checkoutCart} ></Cart>}
+     checkout = {checkoutCart}
+     totalCost = {itemCost} ></Cart>}
       <Outlet context = {[items, error, loading, addItemsToCart]}/>
    
     

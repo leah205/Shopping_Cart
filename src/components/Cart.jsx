@@ -62,12 +62,15 @@ const CheckoutButton = styled.button`
     width: 200px;
     height: 50px;
     margin: 15px auto;
-    
+`
+const StyledTotalCost = styled.p`
+    color: green;
+    text-align: center;
 `
 
 
 
-export default function Cart({items, setModal, deleteItem, checkout}){
+export default function Cart({items, setModal, deleteItem, checkout, totalCost}){
     console.log(items)
     return <StyledCartModal>
         <StyledCloseModalBtn onClick = {() => setModal(false)}>x</StyledCloseModalBtn>
@@ -89,6 +92,7 @@ export default function Cart({items, setModal, deleteItem, checkout}){
         )
         })
         }
+        {items.length? <StyledTotalCost>${totalCost.toFixed(2)}</StyledTotalCost>: null}
         {items.length? <CheckoutButton onClick = {checkout}>Checkout</CheckoutButton> : 
         <h3>No Items In Cart</h3>
 
