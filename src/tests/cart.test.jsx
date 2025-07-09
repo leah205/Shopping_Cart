@@ -11,12 +11,14 @@ let itemData = [
         image: "boot.png",
         title: "boots",
         id: 1,
+        count: 3
     },
     {
         price: 10,
         image: "shirt.png",
         title: "shirt",
         id: 2,
+        count: 1
     },
 ]
 

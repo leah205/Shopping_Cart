@@ -4,7 +4,8 @@ import {Outlet} from "react-router-dom"
 import React from "react"
 import Nav from './components/Nav'
 import {createGlobalStyle} from 'styled-components'
-import {useEffect, useState} from "react"
+import {useState} from "react"
+import useStoreItems from "./hooks/StoreHook"
 import "./App.css"
 import Cart from './components/Cart'
 
@@ -21,25 +22,6 @@ height: 100vh
 }
 `;
 
-const useStoreItems = () => {
-  
-    const [items, setItems ] = useState([]);
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-     useEffect(() => {
-        fetch("https://fakestoreapi.com/products", {mode: "cors"})
-        .then(response => {
-            if(response.status >= 400){
-                throw new Error("server error")
-            }
-            return response.json()})
-        .then(response => setItems(response))
-        .catch(error => setError(error))
-        .finally(() => setLoading(false))
-    }, [])
-  
-    return {items, error, loading}
-}
 
 
 
