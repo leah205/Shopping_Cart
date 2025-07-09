@@ -74,5 +74,24 @@ describe("item", () => {
         await user.click(decrementButton)
         expect(countInput.textContent).toBe("0")
     })
+    it("resets count to zero when add to cart is click", async () => {
+         const user = userEvent.setup()
+        render(<Item
+        id = {1}
+        title = {"boots"}
+        price = {3}
+        image = {"hello.png"}
+        addItemsToCart = {addItemsToCart}
+        >
+        </Item>)
+        const incrementButton = screen.getByRole("button", {name: "+"});
+        const countInput = screen.getByTestId("count-input")
+        const addToCartBtn = screen.getByRole("button", {name: "Add to Cart"})
+        await user.click(incrementButton)
+        await user.click(addToCartBtn)
+        expect(countInput.textContent).toBe("0")
+        
+        expect(countInput.textContent).toBe("0")
+    })
     
 })
