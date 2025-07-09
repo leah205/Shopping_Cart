@@ -84,11 +84,11 @@ export default function Cart({items, setModal, deleteItem, checkout, totalCost})
         <StyledCloseModalBtn onClick = {() => setModal(false)}>x</StyledCloseModalBtn>
         {
         items.map((item) => {
-            return (<ItemContainer key = {item.id}>
+            return (<ItemContainer data-testid="item" key = {item.id}>
                 <LeftItemContainer>
              <ProductImage src={item.image} alt="" />
             <DetailsContainer>
-            <p >{item.title}</p>
+            <p data-testid = "title">{item.title}</p>
             <p>Quantity: {item.count}</p>
             <p>${item.price}</p>
             </DetailsContainer>
@@ -100,7 +100,7 @@ export default function Cart({items, setModal, deleteItem, checkout, totalCost})
         )
         })
         }
-        {items.length? <StyledTotalCost>${totalCost.toFixed(2)}</StyledTotalCost>: null}
+        {items.length? <StyledTotalCost data-testid="cost">${totalCost.toFixed(2)}</StyledTotalCost>: null}
         {items.length? <CheckoutButton onClick = {checkout}>Checkout</CheckoutButton> : 
         <h3>No Items In Cart</h3>
 
