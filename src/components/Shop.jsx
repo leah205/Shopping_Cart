@@ -22,15 +22,18 @@ export default function Shop(){
    if (loading){
     return <h1>Loading...</h1>
    }
+   if (!items.length){
+    return <h1>Shop empty. Come back later!</h1>
+   }
 
    
     return <>
    
     <ItemContainer>{
+    
     items.map((item) => {
         return <Item 
         price = {item.price}
-      
         image = {item.image}
         title = {item.title}
         key = {item.id}
