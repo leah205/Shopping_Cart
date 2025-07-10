@@ -6,7 +6,7 @@ import { describe, expect, it, vi } from "vitest";
 import Cart from "../components/Cart"
 import App from "../App"
 import { MemoryRouter, createMemoryRouter, RouterProvider} from "react-router-dom";
-import routesConfig from "../main"
+import routesConfig from "../routes"
 import Shop from "../components/Shop"
 import { ServerDescriptionChangedEvent } from "mongodb";
 
