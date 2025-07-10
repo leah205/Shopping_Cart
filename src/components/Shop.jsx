@@ -8,8 +8,8 @@ const ItemContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: space-around;
-    margin-top: 20px;
+    justify-content: center;
+    margin: 20px 50px;
     align-content: center;
    `
 export default function Shop(){

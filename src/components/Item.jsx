@@ -28,12 +28,12 @@ const StyledNumberBtn = styled.button`
 `
 const ItemCard = styled.div`
     width: 250px;
-    border: 1px solid gray;
+    border: 1px solid rgb(185, 185, 185);;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 3px 5px 5px gray;
+    box-shadow: 3px 5px 5px rgb(185, 185, 185);;
     padding: 10px;
     height: 300px;
     text-align: center;
@@ -56,7 +56,7 @@ const StyledCartButton = styled.button`
     color: white;
     border: 0;
     padding: 5px 10px;
-    border-radius: 2px;
+    border-radius: 4px;
     &:hover{
     background: rgb(3, 0, 82)}
 `
