@@ -97,7 +97,7 @@ export default function Item({id, title, price,  image,  addItemsToCart}){
     }
     
     return <>
-        <ItemCard>
+        <ItemCard data-testid = "item-card">
             <div>
             <ItemImg data-testid = "product-img" src = {image}></ItemImg>
             <h4 data-testid = "title">{title}</h4>

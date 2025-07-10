@@ -53,14 +53,14 @@ let DescriptionText = styled.div`
 
 export default function Home(){
     return <>
-    <Wrapper>
+    <Wrapper data-testid = "home">
         <PageHeader>Welcome to Shopping Cart</PageHeader>
     <Description>
         <DescriptionText>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, totam laborum. Eaque similique voluptatibus obcaecati pariatur rem impedit neque! Modi, voluptates itaque. Numquam accusamus aliquam, natus quos blanditiis laborum laudantium!
    </DescriptionText>
     </Description>
-    <Button as = {Link} to = "/shop">Shop Now</Button>
+    <Button data-testid = "shop-btn" as = {Link} to = "/shop">Shop Now</Button>
     </Wrapper>
     </>
 }

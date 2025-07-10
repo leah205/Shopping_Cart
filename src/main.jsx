@@ -8,8 +8,8 @@ import Shop from './components/Shop.jsx'
 import Home from './components/Home.jsx'
 import ErrorPage from './components/ErrorPage.jsx'
 
-const router = createBrowserRouter([
-  {
+
+const routesConfig =  [{
     path: '/',
     element: <App />,
     errorElement: <ErrorPage />,
@@ -27,12 +27,16 @@ const router = createBrowserRouter([
       element: <Home />
       }
     ]
-  }
-
-])
-
+  
+  }]
+const router = createBrowserRouter(
+  routesConfig
+)
+/*
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router = {router} />
   </StrictMode>,
-)
+)*/
+
+export default routesConfig

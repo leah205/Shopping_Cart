@@ -47,7 +47,7 @@ const StyledCartButton = styled.div`
 
 function CartButton({ItemCount, handleClick}){
    console.log(ItemCount)
-    return <StyledCartButton onClick = {() => handleClick(true)}>
+    return <StyledCartButton  data-testid = "cartbtn" onClick = {() => handleClick(true)}>
         <p data-testid = "item-count">{ItemCount}</p>
         <img src= {cartSrc} alt="cart" />
     </StyledCartButton>
@@ -62,13 +62,13 @@ CartButton.propTypes = {
 
 export default function Nav({itemCount,  setShoppingModal}){
     return (
-        <StyledNav>
+        <StyledNav data-testid = "nav">
             <NavList>
                 <div>
-                <StyledLink><Link to = "home">Home</Link></StyledLink>
-                <StyledLink><Link to = "shop">Shop </Link></StyledLink>
+                <StyledLink><Link  data-testid = "home-nav" to = "home">Home</Link></StyledLink>
+                <StyledLink ><Link data-testid = "shop-nav" to = "shop">Shop </Link></StyledLink>
                 </div>
-                <StyledLink><CartButton 
+                <StyledLink ><CartButton  
                 ItemCount = {itemCount}
                 handleClick = {setShoppingModal}
                 ></CartButton></StyledLink>

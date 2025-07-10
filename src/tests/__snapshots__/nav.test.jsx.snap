@@ -15,6 +15,7 @@ exports[`nav > renders properly 1`] = `
           <div>
             <li
               class="sc-fhHczv dwvuCB"
+              data-testid="home-nav"
             >
               <a
                 data-discover="true"
@@ -25,6 +26,7 @@ exports[`nav > renders properly 1`] = `
             </li>
             <li
               class="sc-fhHczv dwvuCB"
+              data-testid="shop-nav"
             >
               <a
                 data-discover="true"
@@ -64,6 +66,7 @@ exports[`nav > renders properly 1`] = `
         <div>
           <li
             class="sc-fhHczv dwvuCB"
+            data-testid="home-nav"
           >
             <a
               data-discover="true"
@@ -74,6 +77,7 @@ exports[`nav > renders properly 1`] = `
           </li>
           <li
             class="sc-fhHczv dwvuCB"
+            data-testid="shop-nav"
           >
             <a
               data-discover="true"

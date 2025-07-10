@@ -1,20 +1,7 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`shop > renders item list 1`] = `
+exports[`routes > navigates to shop from home page 1`] = `
 {
-  "asFragment": [Function],
-  "baseElement": <body>
-    <div>
-      <h1>
-        Server error
-      </h1>
-    </div>
-  </body>,
-  "container": <div>
-    <h1>
-      Server error
-    </h1>
-  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
@@ -48,6 +35,7 @@ exports[`shop > renders item list 1`] = `
   "getByTestId": [Function],
   "getByText": [Function],
   "getByTitle": [Function],
+  "logTestingPlaygroundURL": [Function],
   "queryAllByAltText": [Function],
   "queryAllByDisplayValue": [Function],
   "queryAllByLabelText": [Function],
@@ -64,7 +52,5 @@ exports[`shop > renders item list 1`] = `
   "queryByTestId": [Function],
   "queryByText": [Function],
   "queryByTitle": [Function],
-  "rerender": [Function],
-  "unmount": [Function],
 }
 `;

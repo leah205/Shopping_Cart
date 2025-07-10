@@ -13,7 +13,7 @@ const ItemContainer = styled.div`
     align-content: center;
    `
 export default function Shop(){
-   
+   console.log('hello')
    const [items, error, loading, addItemsToCart] = useOutletContext();
    
    if (error){
@@ -29,7 +29,7 @@ export default function Shop(){
    
     return <>
    
-    <ItemContainer>{
+    <ItemContainer data-testid = "item-container">{
     
     items.map((item) => {
         return <Item 

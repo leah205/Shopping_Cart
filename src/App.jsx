@@ -27,6 +27,9 @@ height: 100vh
 
 function App() {
   const {items, error, loading} = useStoreItems()
+  console.log(items)
+  console.log(error)
+  console.log(loading)
   const [cartItems, setCartItems] = useState([])
   const [shoppingModal, setShoppingModal] = useState(false)
   function getItemCount(){

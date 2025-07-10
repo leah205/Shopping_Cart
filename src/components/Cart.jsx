@@ -80,8 +80,8 @@ const StyledTotalCost = styled.p`
 
 export default function Cart({items, setModal, deleteItem, checkout, totalCost}){
    
-    return <StyledCartModal>
-        <StyledCloseModalBtn onClick = {() => setModal(false)}>x</StyledCloseModalBtn>
+    return <StyledCartModal data-testid = "modal">
+        <StyledCloseModalBtn data-testid = "close-modal" onClick = {() => setModal(false)}>x</StyledCloseModalBtn>
         {
         items.map((item) => {
             return (<ItemContainer data-testid="item" key = {item.id}>
