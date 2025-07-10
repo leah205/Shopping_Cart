@@ -8,6 +8,7 @@ exports[`nav > renders properly 1`] = `
        
       <nav
         class="sc-bRKDuR eapIse"
+        data-testid="nav"
       >
         <ul
           class="sc-hvigdm ZqINI"
@@ -15,10 +16,10 @@ exports[`nav > renders properly 1`] = `
           <div>
             <li
               class="sc-fhHczv dwvuCB"
-              data-testid="home-nav"
             >
               <a
                 data-discover="true"
+                data-testid="home-nav"
                 href="/home"
               >
                 Home
@@ -26,10 +27,10 @@ exports[`nav > renders properly 1`] = `
             </li>
             <li
               class="sc-fhHczv dwvuCB"
-              data-testid="shop-nav"
             >
               <a
                 data-discover="true"
+                data-testid="shop-nav"
                 href="/shop"
               >
                 Shop 
@@ -41,6 +42,7 @@ exports[`nav > renders properly 1`] = `
           >
             <div
               class="sc-ggWZvA bpLcjf"
+              data-testid="cartbtn"
             >
               <p
                 data-testid="item-count"
@@ -59,6 +61,7 @@ exports[`nav > renders properly 1`] = `
      
     <nav
       class="sc-bRKDuR eapIse"
+      data-testid="nav"
     >
       <ul
         class="sc-hvigdm ZqINI"
@@ -66,10 +69,10 @@ exports[`nav > renders properly 1`] = `
         <div>
           <li
             class="sc-fhHczv dwvuCB"
-            data-testid="home-nav"
           >
             <a
               data-discover="true"
+              data-testid="home-nav"
               href="/home"
             >
               Home
@@ -77,10 +80,10 @@ exports[`nav > renders properly 1`] = `
           </li>
           <li
             class="sc-fhHczv dwvuCB"
-            data-testid="shop-nav"
           >
             <a
               data-discover="true"
+              data-testid="shop-nav"
               href="/shop"
             >
               Shop 
@@ -92,6 +95,7 @@ exports[`nav > renders properly 1`] = `
         >
           <div
             class="sc-ggWZvA bpLcjf"
+            data-testid="cartbtn"
           >
             <p
               data-testid="item-count"
